@@ -1,7 +1,5 @@
-const main = () => {
-  console.log('Hello world');
-};
+import app from './app';
 
-main();
+const PORT:number = Number(process.env.PORT) || 3000;
 
-export { main };
+app.listen(PORT);

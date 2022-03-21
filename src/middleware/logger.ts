@@ -1,8 +1,10 @@
 import { createLogger, format, transports } from 'winston';
 
+const { combine, timestamp, prettyPrint } = format;
+
 export const logger = createLogger({
   level: 'info',
-  format: format.json(),
+  format: combine(timestamp(), prettyPrint()),
   defaultMeta: { service: 'user-api' },
   transports: [
     // - Write all logs with importance level of `error` or less to `error.log`
